@@ -16,6 +16,10 @@ protocol DetailScreenViewControllerOutput: AnyObject {
 protocol DetailScreenViewControllerInput: AnyObject {
     
     var moduleOutput: DetailScreenViewControllerOutput? { get set }
+    
+    /// Разместить готовый текст на экране
+    /// - Parameter text: для titleTextLabel
+    func locateTitle(text: String)
 }
 
 typealias DetailScreenModule = UIViewController & DetailScreenViewControllerInput
@@ -46,9 +50,11 @@ final class DetailScreenViewController: DetailScreenModule {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = Appearents().setTitle
-//        moduleView.locateTitle(text: )
+    }
+    
+    func locateTitle(text: String) {
+        moduleView.locateTitle(text: text)
     }
 }
 

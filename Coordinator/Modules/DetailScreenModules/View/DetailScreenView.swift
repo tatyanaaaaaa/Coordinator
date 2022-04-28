@@ -24,7 +24,7 @@ protocol DetailScreenViewInput: AnyObject {
 
 final class DetailScreenView: UIView & DetailScreenViewInput {
     
-    var output: DetailScreenViewOutput?
+    weak var output: DetailScreenViewOutput?
     
     private let titleTextLabel = UILabel()
     private let clouseButton = UIButton()
@@ -40,7 +40,8 @@ final class DetailScreenView: UIView & DetailScreenViewInput {
     }
     
     public func setBackgroundColor() {
-        backgroundColor = .gray
+        backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1),
+                                  blue: CGFloat.random(in: 0...1), alpha: 1)
     }
     
     public func locateTitle(text: String) {

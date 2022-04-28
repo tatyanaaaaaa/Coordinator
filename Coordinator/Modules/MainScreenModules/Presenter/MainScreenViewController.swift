@@ -11,6 +11,7 @@ protocol MainScreenViewControllerOutput: AnyObject {
     
     /// Установить готовый текст на следующий экран
     func setFinishedTextToScreen(text: String)
+    
 }
 
 protocol MainScreenViewControllerInput: AnyObject {
